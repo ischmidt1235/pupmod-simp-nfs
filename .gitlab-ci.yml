@@ -254,3 +254,9 @@ pup5.5.7-oel-fips-stunnel:
   <<: *only_with_SIMP_FULL_MATRIX
   script:
     - 'BEAKER_fips=yes bundle exec rake beaker:suites[stunnel,oel]'
+
+pup6-compliance:
+  <<: *pup_6
+  <<: *compliance_base
+  script:
+    - 'BEAKER_fips=yes bundle exec rake beaker:suites[compliance]'
